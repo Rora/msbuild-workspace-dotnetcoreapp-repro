@@ -21,6 +21,13 @@ namespace TestProject
         }
 
         [TestMethod]
+        public async Task ScanNetCoreApp31Project()
+        {
+            //This one fails (I think because it doesn't load in any referenced assemblied)
+            await Scanner.ScanAsync("..\\..\\..\\..\\RoslynScanner.sln", "NetCoreApp31ProjectToAnalyze");
+        }
+
+        [TestMethod]
         public async Task ScanNetStandard20Project()
         {
             //This one succeeds
